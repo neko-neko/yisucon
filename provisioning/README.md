@@ -54,30 +54,6 @@ $ sudo systemctl restart nginx
 - nginx
 - mariadb
 
-## Benchmarker
-
-```bash
-$ git clone https://github.com/yahoojapan/yisucon.git
-$ cd yisucon/provisioning
-
-# 適宜環境変数を設定してください
-$ vim environments/development.json
-
-$ sudo ./provision.sh development benchmarker
-```
-
-## Portal
-
-```bash
-$ git clone https://github.com/yahoojapan/yisucon.git
-$ cd yisucon/provisioning
-
-# 適宜環境変数を設定してください
-$ vim environments/development.json
-
-$ sudo ./provision.sh development portal
-```
-
 ## :memo: note
 
 ポータルとベンチマーカから利用する共通データベースの構築処理は provisioning に含まれていません  
@@ -112,8 +88,8 @@ $ sudo systemctl enable mariadb
 
 $ mysql -u root < ../benchmarker/init.sql
 
-$ sudo ./provision.sh development portal
-$ sudo ./provision.sh development benchmarker
+$ sudo ./provision.sh production portal
+$ sudo ./provision.sh production benchmarker
 ```
 
 :memo: 開始時刻と終了時刻を設定する
