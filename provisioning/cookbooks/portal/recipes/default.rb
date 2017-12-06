@@ -85,8 +85,8 @@ mkdir -p /var/www/portal
 rsync -av --delete portal/ /var/www/portal/
 
 cd /var/www/portal
-sudo npm install
-NODE_ENV=#{node["env"]} sudo npm run build:prod:ngc
+npm install
+NODE_ENV=#{node["env"]} npm run build:prod:ngc
   END
 end
 
