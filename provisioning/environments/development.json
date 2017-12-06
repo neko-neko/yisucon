@@ -2,8 +2,8 @@
   "json_class": "Chef::Environment",
   "default_attributes": {
     "env": "development",
-    "start_date": "2017/12/07 00:00:00",
-    "end_date": "2017/12/07 23:59:59",
+    "start_date": "2017/12/08 13:00:00",
+    "end_date": "2017/12/09 13:00:00",
     "portal_host": "127.0.0.1",
     "db_host": "127.0.0.1",
     "db_port": 3306,
