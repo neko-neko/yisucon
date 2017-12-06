@@ -23,7 +23,7 @@ end
 
 ## env
 
-file "/etc/environment" do
+file "/etc/portal_environment" do
   owner "root"
   group "root"
   mode 0644
@@ -101,7 +101,7 @@ Description=yahoo japan isucon portal server
 
 [Service]
 Type=simple
-EnvironmentFile=/etc/environment
+EnvironmentFile=/etc/portal_environment
 WorkingDirectory=/var/www/portal
 ExecStart=/usr/local/bin/node /var/www/portal/dist/server/index.js
 Restart=always

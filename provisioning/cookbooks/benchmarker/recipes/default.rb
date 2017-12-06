@@ -23,7 +23,7 @@ end
 
 ## env
 
-file "/etc/environment" do
+file "/etc/benchmarker_environment" do
   owner "root"
   group "root"
   mode 0644
@@ -131,7 +131,7 @@ Wants=portal.service
 [Service]
 Type=simple
 Nice=-20
-EnvironmentFile=/etc/environment
+EnvironmentFile=/etc/benchmarker_environment
 ExecStart=/usr/local/bin/benchmarker
 Restart=always
 LimitNOFILE=65535
