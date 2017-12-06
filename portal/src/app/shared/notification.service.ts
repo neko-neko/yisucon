@@ -4,7 +4,7 @@ import { isBrowser } from 'angular2-universal';
 
 @Injectable()
 export class NotificationService {
-  private title = 'Y!SUCON';
+  private title = 'ISUCON';
   private bodyStarted = 'ベンチマーカーが開始しました';
   private bodyFinished = 'ベンチマーカーが終了しました';
   private icon = '/assets/icon.png';
