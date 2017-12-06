@@ -126,6 +126,7 @@ file "/etc/systemd/system/benchmarker.service" do
   content <<-"END"
 [Unit]
 Description=yahoo japan isucon benchmarker
+Wants=portal.service
 
 [Service]
 Type=simple
