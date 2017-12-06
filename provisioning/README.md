@@ -1,7 +1,7 @@
 # Provisioning
 
 ```bash
-$ git clone https://github.com/yahoojapan/yisucon.git
+$ git clone https://github.com/neko-neko/yisucon.git
 $ cd yisucon/provisioning
 $ sudo ./provision.sh development isucon
 ```
@@ -11,7 +11,7 @@ $ sudo ./provision.sh development isucon
 競技用インスタンスのセットアップ。まず CentOS 7.2 のインスタンスを起動して
 
 ```
-$ git clone https://github.com/yahoojapan/yisucon.git
+$ git clone https://github.com/neko-neko/yisucon.git
 $ cd yisucon/provisioning
 $ sudo ./provision.sh development isucon
 ```
@@ -62,7 +62,7 @@ $ sudo systemctl restart nginx
 :memo: 同一ホストにポータルとベンチマーカを構築する
 
 ```bash
-$ git clone https://github.com/yahoojapan/yisucon.git
+$ git clone https://github.com/neko-neko/yisucon.git
 $ cd yisucon/provisioning
 
 $ vim environments/development.json
