@@ -1,4 +1,4 @@
-package: yisucon1/webapp/go/isuwitter
+package: isucon1/webapp/go/isuwitter
 import:
 - package: github.com/go-sql-driver/mysql
 - package: github.com/gorilla/mux

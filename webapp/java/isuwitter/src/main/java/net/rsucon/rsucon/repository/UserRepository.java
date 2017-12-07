@@ -1,6 +1,6 @@
-package net.ysucon.ysucon.repository;
+package net.rsucon.rsucon.repository;
 
-import net.ysucon.ysucon.model.User;
+import net.rsucon.rsucon.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
