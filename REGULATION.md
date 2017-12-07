@@ -15,9 +15,13 @@ ISUCONの詳細を記載します。
 スコアに影響するような質問にはお答えできませんのでご了承ください。
 
 ## サーバへの接続について
-事前にサーバー情報と秘密鍵を個別にお渡しするのでそれでsshで接続してください。
-注意ポイントとして、今回サウスからアクセスがあることを前提としているため
-sshのポートを443に変更しております。
+
+key: 全インスタンス `isucon-shared-key`
+port: 全インスンタンス `443`
+command: ssh -i ~/.ssh/isucon-shared-key.pem centos@${IP} -p 443
+
+サーバーIPと秘密鍵はお渡しします。
+
 
 ## アプリケーションサーバ構成
 ### OS
@@ -41,18 +45,106 @@ WebサーバとしてデフォルトでNginxが起動しており、systemdで�
 初期設定ではNode実装のアプリケーションが動いています。
 ブラウザから80番ポートにアクセスして動作確認しましょう。
 
+## アプリケーションへのログインについて
+こちらの名前の名前がID、名前のアルファベットをそれぞれ後ろにひとつづつずらしていったものがPWとなります。
+
+例
+```
+ID Asao
+PW Btbp
+```
+
 ## 言語の切り替え
 参考実装実装として、Node.js, Ruby, Go, PHP, Javaが用意されています。（最初はnode実装が動いています。）
 
 各言語実装は systemd で管理されています。基本的には `systemctl stop/start` ならびに `systemctl enable/disable` で制御します。
 また、 `Ruby`, `Go`, `Java` に関しては二つのserviceを起動させる必要があります。
+`PHP`, `Node.js` のserviceは一つです。
 
-node実装からgo実装に切り替える例が以下です。
+以下に起動したり停止したりするsampleコマンドを記載しておきます。
+
+### Ruby
+#### service 自動起動設定->起動
+```bash
+$ sudo systemctl enable isucon-ruby-isutomo.service
+$ sudo systemctl enable isucon-ruby-isuwitter.service
+$ sudo systemctl start isucon-ruby-isutomo.service
+$ sudo systemctl start isucon-ruby-isuwitter.service
+```
+#### service 停止->自動起動解除
+```bash
+$ sudo systemctl stop isucon-ruby-isutomo.service
+$ sudo systemctl stop isucon-ruby-isuwitter.service
+$ sudo systemctl disable isucon-ruby-isutomo.service
+$ sudo systemctl disable isucon-ruby-isuwitter.service
+```
+
+### Node.js
+#### service 自動起動設定->起動
+```bash
+$ sudo systemctl enable isucon-node.service
+$ sudo systemctl start isucon-node.service
+```
+#### service 停止->自動起動解除
+```bash
+$ sudo systemctl stop isucon-node.service
+$ sudo systemctl disable isucon-node.service
+```
+
+### Java
+#### service 自動起動設定->起動
+```bash
+$ sudo systemctl enable isucon-java-isutomo.service
+$ sudo systemctl enable isucon-java-isuwitter.service
+$ sudo systemctl start isucon-java-isutomo.service
+$ sudo systemctl start isucon-java-isuwitter.service
+```
+#### service 停止->自動起動解除
+```bash
+$ sudo systemctl stop isucon-java-isutomo.service
+$ sudo systemctl stop isucon-java-isuwitter.service
+$ sudo systemctl disable isucon-java-isutomo.service
+$ sudo systemctl disable isucon-java-isuwitter.service
+```
+
+### PHP
+#### service 自動起動設定->起動
+```bash
+$ sudo systemctl enable isucon-php.service
+$ sudo systemctl start isucon-php.service
+```
+#### service 停止->自動起動解除
+```bash
+$ sudo systemctl stop isucon-php.service
+$ sudo systemctl disable isucon-php.service
+```
+### Go
+#### service 自動起動設定->起動
+```bash
+$ sudo systemctl enable isucon-go-isutomo.service
+$ sudo systemctl enable isucon-go-isuwitter.service
+$ sudo systemctl start isucon-go-isutomo.service
+$ sudo systemctl start isucon-go-isuwitter.service
+```
+
+#### service 停止->自動起動解除
+```bash
+$ sudo systemctl stop isucon-go-isutomo.service
+$ sudo systemctl stop isucon-go-isuwitter.service
+$ sudo systemctl disable isucon-go-isutomo.service
+$ sudo systemctl disable isucon-go-isuwitter.service
+```
+
+
+#### node実装からgo実装に切り替える例が以下です。
 
 ```bash
 $ sudo systemctl stop isucon-node
-$ sudo systemctl start isucon-go-isutomo
-$ sudo systemctl start isucon-go-isuwitter
+$ sudo systemctl disable isucon-node
+$ sudo systemctl enable isucon-go-isutomo.service
+$ sudo systemctl enable isucon-go-isuwitter.service
+$ sudo systemctl start isucon-go-isutomo.service
+$ sudo systemctl start isucon-go-isuwitter.service
 ```
 
 ### PHPの場合
@@ -69,7 +161,7 @@ $ sudo systemctl restart nginx
 
 ## ベンチマーク実行
 ポータルサイトから実行できます。
-TODO: ポータルのURL
+ポータルのURL: http://13.115.144.95
 
 まずは一度ベンチマークを実行してみましょう。
 
