@@ -1,12 +1,12 @@
-package net.ysucon.ysucon;
+package net.rsucon.rsucon;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.org.apache.xerces.internal.impl.dv.util.HexBin;
-import net.ysucon.ysucon.model.Tweet;
-import net.ysucon.ysucon.model.User;
-import net.ysucon.ysucon.repository.TweetRepository;
-import net.ysucon.ysucon.repository.UserRepository;
+import net.rsucon.rsucon.model.Tweet;
+import net.rsucon.rsucon.model.User;
+import net.rsucon.rsucon.repository.TweetRepository;
+import net.rsucon.rsucon.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

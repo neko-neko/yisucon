@@ -1,4 +1,4 @@
-package net.ysucon.ysucon.repository;
+package net.rsucon.rsucon.repository;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import net.ysucon.ysucon.model.Friends;
+import net.rsucon.rsucon.model.Friends;
 
 @Repository
 public class FriendsRepository {

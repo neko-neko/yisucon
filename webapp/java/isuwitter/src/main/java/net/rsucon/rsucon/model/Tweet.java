@@ -1,4 +1,4 @@
-package net.ysucon.ysucon.model;
+package net.rsucon.rsucon.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

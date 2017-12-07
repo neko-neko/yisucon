@@ -1,4 +1,4 @@
-package net.ysucon.ysucon;
+package net.rsucon.rsucon;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,8 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import net.ysucon.ysucon.model.Friends;
-import net.ysucon.ysucon.repository.FriendsRepository;
+import net.rsucon.rsucon.model.Friends;
+import net.rsucon.rsucon.repository.FriendsRepository;
 
 
 @SpringBootApplication
