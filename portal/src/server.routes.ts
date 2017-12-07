@@ -13,6 +13,6 @@ export const routes: string[] = [
   'home',
   'teams',
   'team',
-  'register',
+  //'register',
   'login'
 ];
